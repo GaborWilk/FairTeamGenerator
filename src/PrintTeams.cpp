@@ -9,8 +9,7 @@
 // using Resources features
 using namespace res;
 
-void PrintTeams::printTeams(res::playerStatistics&& teamA, double avgOfTeamA, res::playerStatistics&& teamB, double avgOfTeamB) const
-{
+void PrintTeams::printTeams(res::playerStatistics&& teamA, double avgOfTeamA, res::playerStatistics&& teamB, double avgOfTeamB) const {
     std::cout << std::endl << std::endl << "********************************************" << std::endl;
 
     std::cout << "===============[ TEAM A ]====================" << std::endl;
@@ -27,9 +26,8 @@ void PrintTeams::printTeams(res::playerStatistics&& teamA, double avgOfTeamA, re
     std::cout << "********************************************" << std::endl;
 }
 
-void PrintTeams::printPlayers(res::playerStatistics&& player) const
-{
-    for(auto& it : player) {
+void PrintTeams::printPlayers(res::playerStatistics&& player) const {
+    for (auto& it : player) {
         std::cout << "Nickname: " << it.first << " (Rating: " << it.second << ")" << std::endl;
     }
 }
