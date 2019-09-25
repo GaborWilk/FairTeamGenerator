@@ -11,11 +11,9 @@
 using namespace res;
 
 
-void GreedyAlgorithm::calculateFairTeams(playerStatistics&& player)
-{
+void GreedyAlgorithm::calculateFairTeams(playerStatistics&& player) {
     // sort players by DSC
-    std::sort(player.begin(), player.end(), [](const auto& lhs, const auto& rhs)
-    {
+    std::sort(player.begin(), player.end(), [](const auto& lhs, const auto& rhs) {
         return lhs.second > rhs.second;
     });
 
@@ -25,8 +23,8 @@ void GreedyAlgorithm::calculateFairTeams(playerStatistics&& player)
     avgOfTeamB_ += player[1].second;
     playersOfTeamB_.emplace_back(player[1]);
 
-    for(unsigned i = 2; i < player.size(); ++i) {
-        if(avgOfTeamA_ < avgOfTeamB_) {
+    for (unsigned i = 2; i < player.size(); ++i) {
+        if (avgOfTeamA_ < avgOfTeamB_) {
             avgOfTeamA_ += player[i].second;
             playersOfTeamA_.emplace_back(player[i]);
         } else {
@@ -41,18 +39,15 @@ void GreedyAlgorithm::calculateFairTeams(playerStatistics&& player)
     printCalculatedTeams();
 }
 
-void GreedyAlgorithm::printCalculatedTeams()
-{
+void GreedyAlgorithm::printCalculatedTeams() {
     printTeam_.printTeams(std::move(playersOfTeamA_), getRatingOfTeamA(), std::move(playersOfTeamB_), getRatingOfTeamB());
 }
 
-double GreedyAlgorithm::getRatingOfTeamA() const
-{
+double GreedyAlgorithm::getRatingOfTeamA() const {
     return avgOfTeamA_;
 }
 
-double GreedyAlgorithm::getRatingOfTeamB() const
-{
+double GreedyAlgorithm::getRatingOfTeamB() const {
     return avgOfTeamB_;
 }
 
