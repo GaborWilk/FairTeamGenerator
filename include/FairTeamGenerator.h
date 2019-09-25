@@ -19,8 +19,7 @@ namespace ftg {
     class FairTeamGenerator {
     public:
         // get FairTeamGenerator class instance by using Singleton design pattern with lazy initialization (thread-safe)
-        static FairTeamGenerator& getInstance()
-        {
+        static FairTeamGenerator& getInstance() {
             static FairTeamGenerator instance;
             return instance;
         }
