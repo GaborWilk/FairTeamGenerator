@@ -1,13 +1,12 @@
-#include "Resources.h"
-#include "GreedyAlgorithm.h"
-#include "PrintTeams.h"
+#include <include/Resources.h>
+#include <include/GreedyAlgorithm.h>
+#include <include/PrintTeams.h>
 
 #include <iostream>
 #include <algorithm>
 #include <iomanip>
 #include <cmath>
 
-// using Resources features
 using namespace res;
 
 
@@ -17,7 +16,7 @@ void GreedyAlgorithm::calculateFairTeams(playerStatistics&& player) {
         return lhs.second > rhs.second;
     });
 
-    // best player will be in teamA, 2nd in teamB, lowest overall team choose next
+    // best player will be in team A, 2nd in team B, lowest overall team choose next
     avgOfTeamA_ += player[0].second;
     playersOfTeamA_.emplace_back(player[0]);
     avgOfTeamB_ += player[1].second;
@@ -40,7 +39,8 @@ void GreedyAlgorithm::calculateFairTeams(playerStatistics&& player) {
 }
 
 void GreedyAlgorithm::printCalculatedTeams() {
-    printTeam_.printTeams(std::move(playersOfTeamA_), getRatingOfTeamA(), std::move(playersOfTeamB_), getRatingOfTeamB());
+    printTeam_.printTeams(std::move(playersOfTeamA_), getRatingOfTeamA(),
+                          std::move(playersOfTeamB_), getRatingOfTeamB());
 }
 
 double GreedyAlgorithm::getRatingOfTeamA() const {

@@ -1,6 +1,6 @@
-#include "FairTeamGenerator.h"
-#include "Resources.h"
-#include "GreedyAlgorithm.h"
+#include <include/FairTeamGenerator.h>
+#include <include/Resources.h>
+#include <include/GreedyAlgorithm.h>
 
 #include <iostream>
 
@@ -22,16 +22,16 @@ namespace ftg {
     }
 
     auto FairTeamGenerator::getPlayerRatingByName(const std::string& name) const {
-        unsigned int rating = 0;
+        unsigned int res = 0;
 
         for (auto& it : players_) {
             if (name == it.first) {
-                rating = it.second;
+                res = it.second;
                 break;
             }
         }
 
-        return rating;
+        return res;
     }
 
     double FairTeamGenerator::getAverageRatingOfTeamA() const {

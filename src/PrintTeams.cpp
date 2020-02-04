@@ -1,15 +1,16 @@
-#include "Resources.h"
-#include "PrintTeams.h"
+#include <include/Resources.h>
+#include <include/PrintTeams.h>
 
 #include <iostream>
 #include <algorithm>
 #include <iomanip>
 #include <cmath>
 
-// using Resources features
 using namespace res;
 
-void PrintTeams::printTeams(res::playerStatistics&& teamA, double avgOfTeamA, res::playerStatistics&& teamB, double avgOfTeamB) const {
+
+void PrintTeams::printTeams(res::playerStatistics&& teamA, double avgOfTeamA,
+                            res::playerStatistics&& teamB, double avgOfTeamB) const {
     std::cout << std::endl << std::endl << "********************************************" << std::endl;
 
     std::cout << "===============[ TEAM A ]====================" << std::endl;
