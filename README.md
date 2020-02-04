@@ -10,6 +10,6 @@ Usage:
 
   1) Provide the number of players (4, 6 and 8 are allowed only).
   2) Provide the nickname of a given player
-  3) Provide the corresponding rating value
+  3) Provide the corresponding rating value (1 is the minmum required and 5000 is the maximum allowed value for a given rating)
   
   As a result, the tool prints out the calculated fair teams, which has the lowest difference between their average ratings.
