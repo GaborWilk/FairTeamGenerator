@@ -1,8 +1,8 @@
 #ifndef FAIR_TEAM_GENERATOR_H
 #define FAIR_TEAM_GENERATOR_H
 
-#include "AbstractAlgorithm.h"
-#include "Resources.h"
+#include <include/AbstractAlgorithm.h>
+#include <include/Resources.h>
 
 #include <memory>
 
@@ -17,7 +17,7 @@ namespace ftg {
 
     // FairTeamGenerator class to store players' data and generate two fair teams based on statistics (e.g. rating)
     class FairTeamGenerator {
-    public:
+      public:
         // get FairTeamGenerator class instance by using Singleton design pattern with lazy initialization (thread-safe)
         static FairTeamGenerator& getInstance() {
             static FairTeamGenerator instance;
@@ -41,7 +41,7 @@ namespace ftg {
         void useAlgorithm();
         void setAlgorithmType(std::unique_ptr<AbstractAlgorithm> ptr);
 
-    private:
+      private:
         explicit FairTeamGenerator() {}
         ~FairTeamGenerator() = default;
 

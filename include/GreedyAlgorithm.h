@@ -1,12 +1,12 @@
 #ifndef GREEDY_ALGORITHM_H
 #define GREEDY_ALGORITHM_H
 
-#include "AbstractAlgorithm.h"
-#include "Resources.h"
-#include "PrintTeams.h"
+#include <include/AbstractAlgorithm.h>
+#include <include/Resources.h>
+#include <include/PrintTeams.h>
 
 class GreedyAlgorithm : public AbstractAlgorithm {
-public:
+  public:
     GreedyAlgorithm() = default;
     ~GreedyAlgorithm() override final {}
 
@@ -17,7 +17,7 @@ public:
     double getRatingOfTeamA() const override final;
     double getRatingOfTeamB() const override final;
 
-private:
+  private:
     res::playerStatistics playersOfTeamA_;
     res::playerStatistics playersOfTeamB_;
     double avgOfTeamA_ = 0.0;

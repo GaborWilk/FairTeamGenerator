@@ -8,14 +8,12 @@
 #include <vector>
 
 
-// creating namespace for Resource features
 namespace res {
 
     // Alias to store statistical data about players
     using playerData = std::pair<std::string, unsigned int>;
     using playerStatistics = std::vector<playerData>;
 
-    // Constexpr values to easily check the constraints
     // Number of players: 4
     constexpr unsigned short NUM_OF_PLAYERS_FOUR = 4;
 
@@ -25,10 +23,10 @@ namespace res {
     // Number of players: 8
     constexpr unsigned short NUM_OF_PLAYERS_EIGHT = 8;
 
-    // Minimum value of players' rating
+    // The required minimum value of player's rating
     constexpr unsigned int RATING_VALUE_MIN = 1;
 
-    // Maximum value of players' rating
+    // The maximum allowed value of players' rating
     constexpr unsigned int RATING_VALUE_MAX = 5000;
 
     // Additional namespace for overriding ostream << operator (for convenience)
